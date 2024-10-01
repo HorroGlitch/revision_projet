@@ -347,7 +347,7 @@ let bouton1 = document.querySelector("#bouton1")
 let bouton2 = document.querySelector("#bouton2")
 let bouton3 = document.querySelector("#bouton3")
 
-let chosseMultiple = document.querySelector("#choisi")
+let choixMultiple = document.querySelector("#choisi")
 
 let textArea = document.querySelector("#commentaire")
 
@@ -359,17 +359,25 @@ alertButton.addEventListener("click", ()=>{
 
     monTexte = monTexte.value
     password = password.value
+    textArea = textArea.value
     
-    if (caseCoche.value === checked) {
+    if (caseCoche.checked) {
         caseCoche = caseCoche.value
     } else {
         caseCoche = "non cochée"
+    }
+
+    if (choixMultiple[i].checked) {
+        choixMultiple = choixMultiple[i].value
     }
 
 
     alert(
         "Mon texte : " + monTexte +
         " Password : " + password +
-        " case à cochée : " + caseCoche
+        " case à cochée : " + caseCoche +
+        " bouton 1 : " +
+        " commentaire : " + textArea + 
+        " choisi : " + choixMultiple
     )
 })
